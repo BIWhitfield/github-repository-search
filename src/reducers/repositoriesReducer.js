@@ -2,7 +2,7 @@ import * as types from '../actions/types';
 import initialState from './INITIAL_STATE';
 
 
-function reducer(prevState = initialState, action) {
+function repositoriesReducer(prevState = initialState, action) {
   if (!action) return prevState;
 
   switch (action.type) {
@@ -25,4 +25,4 @@ function reducer(prevState = initialState, action) {
   }
 }
 
-export default reducer;
+export default repositoriesReducer;
