@@ -26,7 +26,7 @@ export function searchRepositoriesError(error) {
 export function searchRepositories() {
   return function (dispatch) {
     dispatch(searchRepositoriesRequest());
-    axios.get(`${ROOT}topic:ruby+topic:rails`).then((res) => {
+    return axios.get(`${ROOT}blue`).then((res) => {
       dispatch(searchRepositoriesSuccess(res.data));
     }).catch((err) => {
       dispatch(searchRepositoriesError(err));
