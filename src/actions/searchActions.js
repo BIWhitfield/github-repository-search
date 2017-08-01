@@ -23,11 +23,11 @@ export function searchRepositoriesError(error) {
   };
 }
 
-export function searchRepositories() {
+export function searchRepositories(searchTerm) {
   return function (dispatch) {
     dispatch(searchRepositoriesRequest());
-    return axios.get(`${ROOT}blue`).then((res) => {
-      dispatch(searchRepositoriesSuccess(res.data));
+    return axios.get(`${ROOT}${searchTerm}`).then((res) => {
+      dispatch(searchRepositoriesSuccess(res.data.items));
     }).catch((err) => {
       dispatch(searchRepositoriesError(err));
     });
