@@ -39,7 +39,10 @@ class Repository extends Component {
           <section className="section">
             <div className="container">
               <h2><b>ReadMe</b></h2>
-              {markDownFormatter(base64Decoder(this.props.readMe))}
+              <div
+                className="content"
+                dangerouslySetInnerHTML={{ __html: markDownFormatter(base64Decoder(this.props.readMe)) }}
+								/>
             </div>
           </section>
         </div>
