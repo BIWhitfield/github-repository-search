@@ -1,6 +1,7 @@
 A simple web app that utilises GitHub API's to allow a user to search for a repository by name. The app makes use of React, Redux and various npm packages
 
-### `Clone the project to your machine:`
+### Clone the project to your machine:
+
 `git clone https://github.com/BIWhitfield/github-repository-search/edit/dev/README.md`
 
 
