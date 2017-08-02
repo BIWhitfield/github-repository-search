@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { searchRepositories } from '../actions/searchActions';
+import RepoCard from './RepoCard';
 import '../css/SearchForm.css';
 
 class SearchBar extends Component {
@@ -29,31 +29,35 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="field has-addons">
-        <div className="control is-expanded">
-          <input
-            value={this.state.searchInput}
-            onChange={this.onChange}
-            className="input"
-            type="text"
-            placeholder="Find a repository"
-          />
-        </div>
+      <div className="columns">
+        <div className="column" />
 
-        <div className="control">
-          <button type="button" className="button is-outlined is-primary" onClick={this.handleClick}>Search</button>
-        </div>
+        <div className="column is-half">
+          <div className="field has-addons">
+            <div className="control is-expanded">
+              <input
+                value={this.state.searchInput}
+                onChange={this.onChange}
+                className="input"
+                type="text"
+                placeholder="Find a repository"
+              />
+            </div>
 
-        <div className="tile is-ancestor">
-          <div className="tile is-parent is-vertical">
-            {this.props.repositories.repositories.map(repo => (
-              <div key={repo.id} className="tile is-child box" >
-                <NavLink to={`/repos/${repo.full_name}`} className="title is-3"><h1>{repo.full_name}</h1></NavLink>
-                <p>Forks: {repo.forks}</p>
-              </div>
+            <div className="control">
+              <button type="button" className="button is-outlined is-primary" onClick={this.handleClick}>Search</button>
+            </div>
+
+            <div className="tile is-ancestor">
+              <div className="tile is-parent is-vertical">
+                {this.props.repositories.repositories.map(repo => (
+                  <RepoCard title={repo.full_name} key={repo.id} />
 						))}
+              </div>
+            </div>
           </div>
         </div>
+        <div className="column" />
       </div>
     );
   }
