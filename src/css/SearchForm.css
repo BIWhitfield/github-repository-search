@@ -1,0 +1,10 @@
+.tile .is-ancestor {
+  margin-top: 120px;
+  background-color: white;
+}
+
+.control {
+  box-sizing: border-box;
+  display: inline-block;
+}
+
