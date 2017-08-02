@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { searchRepositories } from '../actions/searchActions';
@@ -22,16 +23,14 @@ class SearchBar extends Component {
   handleClick(e) {
     e.preventDefault();
     const searchTerm = this.state.searchInput;
-    console.log(searchTerm);
     this.props.searchRepositories(searchTerm);
-		this.setState({ searchInput: '' });
-		console.log(searchTerm);
+    this.setState({ searchInput: '' });
   }
 
   render() {
     return (
       <div className="field has-addons">
-        <div className="control">
+        <div className="control is-expanded">
           <input
             value={this.state.searchInput}
             onChange={this.onChange}
@@ -40,17 +39,19 @@ class SearchBar extends Component {
             placeholder="Find a repository"
           />
         </div>
+
         <div className="control">
-          <button className="button is-outlined" onClick={this.handleClick}>Search</button>
+          <button type="button" className="button is-outlined is-primary" onClick={this.handleClick}>Search</button>
         </div>
+
         <div className="tile is-ancestor">
           <div className="tile is-parent is-vertical">
             {this.props.repositories.repositories.map(repo => (
-              <div key={repo.id} className="tile is-child">
-                <h1>{repo.full_name}</h1>
+              <div key={repo.id} className="tile is-child box" >
+                <NavLink to={`/repos/${repo.full_name}`} className="title is-3"><h1>{repo.full_name}</h1></NavLink>
                 <p>Forks: {repo.forks}</p>
               </div>
-					))}
+						))}
           </div>
         </div>
       </div>
