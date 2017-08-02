@@ -1,20 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 import NavBar from './components/NavBar';
 import SearchForm from './components/SearchForm';
-// import RouterComponent from './RouterComponent';
+import Repository from './components/Repository';
 import './css/App.css';
 
+const history = createBrowserHistory();
+
 const App = () => (
-  <div className="App">
-    <div className="columns">
-      <div className="column" />
-      <div className="column is-half">
-        <NavBar />
-        <SearchForm />
+  <Router history={history}>
+    <div className="App">
+      <div className="columns">
+        <div className="column" />
+        <div className="column is-half">
+          <NavBar />
+        </div>
+        <div className="column" />
       </div>
-      <div className="column" />
+      <Route exact path="/" component={SearchForm} />
+      <Route path="/repos/:owner/:repo" component={Repository} />
     </div>
-  </div>
+  </Router>
 );
 
 export default App;
