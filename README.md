@@ -1,4 +1,4 @@
-A simple web app that utilises GitHub API's to allow a user to search for a repository by name. The app makes use of React, Redux and various npm packages
+A simple web app that utilises GitHub API's to allow a user to search for a repository by name. The app makes use of React, Redux and various npm packages. Once loaded, put in a search term, press the search button and click any item in the list. Hit the GitHub logo to go back to the list!
 
 ### Clone the project to your machine:
 
