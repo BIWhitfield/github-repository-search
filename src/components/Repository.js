@@ -47,15 +47,19 @@ class Repository extends Component {
         </div>
 
         <div className="column is-5">
-          <section className="section">
-            <div className="container">
-              <h1 className="title"><b>ReadMe</b></h1>
-              <div
-                className="content"
-                dangerouslySetInnerHTML={{ __html: markDownFormatter(base64Decoder(this.props.readMe)) }}
-              />
-            </div>
-          </section>
+          {
+						this.props.readMe === undefined
+						? <p>No ReadMe in repository!</p>
+						: <section className="section">
+								<div className="container">
+									<h1 className="title"><b>ReadMe</b></h1>
+									<div
+										className="content"
+										dangerouslySetInnerHTML={{ __html: markDownFormatter(base64Decoder(this.props.readMe)) }}
+									/>
+								</div>
+							</section>
+						}
         </div>
         <div className="column is-2" />
       </div>
