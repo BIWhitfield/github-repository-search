@@ -106,7 +106,7 @@ th {
 }
 
 html {
-  background-color: whitesmoke;
+  background-color: white;
   font-size: 14px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -2032,14 +2032,16 @@ a.box:active {
 }
 
 .image {
-  display: block;
+  display: inline-block;
   position: relative;
+  height: 50%;
+  width: 50%;
 }
 
 .image img {
-  display: block;
-  height: auto;
-  width: 100%;
+  display: inline;
+  height: 50%;
+  width: 50%;
 }
 
 .image.is-square img, .image.is-1by1 img, .image.is-4by3 img, .image.is-3by2 img, .image.is-16by9 img, .image.is-2by1 img {
@@ -4078,7 +4080,7 @@ a.nav-item.is-tab.is-active {
 
 @media screen and (max-width: 768px) {
   .nav-menu {
-    background-color: white;
+    background-color: black;
     box-shadow: 0 4px 7px rgba(10, 10, 10, 0.1);
     left: 0;
     display: none;
