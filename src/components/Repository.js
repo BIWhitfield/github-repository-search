@@ -42,7 +42,7 @@ class Repository extends Component {
               <div
                 className="content"
                 dangerouslySetInnerHTML={{ __html: markDownFormatter(base64Decoder(this.props.readMe)) }}
-								/>
+              />
             </div>
           </section>
         </div>
@@ -70,9 +70,8 @@ Repository.propTypes = {
   fetchReadMe: PropTypes.func.isRequired,
   readMe: PropTypes.string.isRequired,
   fetchRepo: PropTypes.func.isRequired,
-  full_name: PropTypes.string.isRequired,
-  forks_count: PropTypes.number.isRequired,
-  open_issues_count: PropTypes.number.isRequired,
+  repo: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Repository);

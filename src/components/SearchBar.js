@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import { searchRepositories } from '../actions/searchActions';
 import RepoCard from './RepoCard';
-import '../css/SearchForm.css';
+import '../css/SearchBar.css';
 
-class SearchBar extends Component {
+export class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,7 +50,7 @@ class SearchBar extends Component {
 
             <div className="tile is-ancestor">
               <div className="tile is-parent is-vertical">
-                {this.props.repositories.repositories.map(repo => (
+                {this.props.repositories.map(repo => (
                   <RepoCard title={repo.full_name} key={repo.id} />
 						))}
               </div>
@@ -70,12 +70,12 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  repositories: state.repositories,
+  repositories: state.repositories.repositories,
 });
 
 SearchBar.propTypes = {
   searchRepositories: PropTypes.func.isRequired,
-  repositories: PropTypes.object.isRequired,
+  repositories: PropTypes.array.isRequired,
 };
 
 
