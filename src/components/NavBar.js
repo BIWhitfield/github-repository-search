@@ -3,17 +3,28 @@ import { NavLink } from 'react-router-dom';
 import '../css/NavBar.css';
 
 const NavBar = () => (
-  <nav className="navbar is-transparent">
-    <NavLink to="/" className="navbar-brand">
+  <div className="navigation">
+    <section className="navbar">
+      <NavLink to="/" className="gitLogo">
+        <img
+          src="http://www.iconsdb.com/icons/preview/white/github-10-xxl.png"
+          alt="Github Logo"
+          width="50"
+          height="50"
+        />
+      </NavLink>
+      <div className="headerText">
+        <h1 >GitHub Repository Search</h1>
+      </div>
       <img
-        src="https://octicons.github.com/img/og/mark-github.png"
-        alt="Github Logo"
-        width="150"
-        height="150"
+        className="degree53Logo"
+        src="https://pbs.twimg.com/profile_images/832273144731820032/JKY2RxOq_400x400.jpg"
+        alt="Degree53 Logo"
+        width="auto"
       />
-    </NavLink>
-    <h1 className="headerText">GitHub Repository Search</h1>
-  </nav>
+    </section>
+
+  </div>
 );
 
 export default NavBar;

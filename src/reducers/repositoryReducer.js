@@ -14,6 +14,7 @@ function repositoryReducer(prevState = initialState, action) {
         ...prevState,
         repoFetched: true,
         repository: action.data,
+        owner: action.data.owner,
         error: '',
         loading: false,
       };

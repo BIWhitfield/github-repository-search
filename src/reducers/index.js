@@ -7,5 +7,6 @@ import readMeReducer from './readMeReducer';
 export default combineReducers({
   repositories: repositoriesReducer,
   repository: repositoryReducer,
+  owner: repositoryReducer,
   readMe: readMeReducer,
 });

@@ -11,14 +11,13 @@ const history = createBrowserHistory();
 const App = () => (
   <Router history={history}>
     <div className="App">
-      <div className="columns">
+      <NavBar />
+      <div className="columns" >
         <div className="column" />
-        <div className="column is-half">
-          <NavBar />
-        </div>
+        <div className="column is-half" />
         <div className="column" />
       </div>
-			<Route exact path="/" component={SearchBar} />
+      <Route exact path="/" component={SearchBar} />
       <Route path="/repos/:owner/:repo" component={Repository} />
     </div>
   </Router>

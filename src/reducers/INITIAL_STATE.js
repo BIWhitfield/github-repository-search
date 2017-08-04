@@ -6,6 +6,7 @@ const initialState = {
   readMeFetched: false,
   readMe: '',
   repository: {},
+  owner: {},
 };
 
 export default initialState;

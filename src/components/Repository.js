@@ -17,28 +17,39 @@ class Repository extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="columns">
-        <div className="column" />
+        <div className="column is-2" />
 
-        <div className="column is-half">
+        <div className="column is-3" >
+          <div className="container">
+            <section>
+              <img
+                className="image"
+                src={this.props.owner.avatar_url}
+                alt="Owner Avatar"
+              />
+            </section>
+            <section className="section">
+              <div className="container">
+                <h1 className="title"><b>{this.props.repo.full_name}</b></h1>
+                <p>{this.props.repo.description}</p>
+              </div>
+            </section>
+
+            <section>
+              <div className="container">
+                <p>Details</p>
+                <p><b>Forks:</b> {this.props.repo.forks_count} || <b>Open Issues:</b> {this.props.repo.open_issues_count} || <b>Stars:</b> {this.props.repo.stargazers_count}</p>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div className="column is-5">
           <section className="section">
             <div className="container">
-              <h1 className="title"><b>{this.props.repo.full_name}</b></h1>
-              <p>{this.props.repo.description}</p>
-            </div>
-          </section>
-
-          <section>
-            <div className="container">
-              <p><b>Forks:</b> {this.props.repo.forks_count} || <b>Open Issues:</b> {this.props.repo.open_issues_count} || <b>Stars:</b> {this.props.repo.stargazers_count}</p>
-            </div>
-          </section>
-
-          <section className="section">
-            <div className="container">
-              <h2><b>ReadMe</b></h2>
+              <h1 className="title"><b>ReadMe</b></h1>
               <div
                 className="content"
                 dangerouslySetInnerHTML={{ __html: markDownFormatter(base64Decoder(this.props.readMe)) }}
@@ -46,7 +57,7 @@ class Repository extends Component {
             </div>
           </section>
         </div>
-        <div className="column" />
+        <div className="column is-2" />
       </div>
     );
   }
@@ -64,6 +75,7 @@ const mapDispatchToProps = dispatch => ({
 const mapStateToProps = state => ({
   readMe: state.readMe.readMe,
   repo: state.repository.repository,
+  owner: state.owner.owner,
 });
 
 Repository.propTypes = {
@@ -72,6 +84,7 @@ Repository.propTypes = {
   fetchRepo: PropTypes.func.isRequired,
   repo: PropTypes.object.isRequired,
   match: PropTypes.object.isRequired,
+  owner: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Repository);

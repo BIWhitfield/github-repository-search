@@ -2,3 +2,30 @@
   font-size: 50;
   font: bold;
 }
+
+.column.is-3 {
+  
+}
+
+.tile {
+  padding-top: 70px;
+  justify-content: center;
+}
+
+.img {
+  align-items: center;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.image {
+  border-radius: 5%;
+  margin: 15%;
+  display: inline;
+
+}
+
+.column.is-5 {
+  
+  border-left: 1px solid lightgrey;
+}

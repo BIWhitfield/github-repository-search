@@ -12,6 +12,7 @@ describe('request reducer', () => {
       readMeFetched: false,
       readMe: '',
       repository: {},
+      owner: {},
     });
   });
   it('can send a request', () => {
@@ -25,7 +26,8 @@ describe('request reducer', () => {
           readMeFetched: false,
           repoFetched: false,
           repositories: [],
-          repository: {} },
+          repository: {},
+          owner: {} },
       })).toEqual({
         error: null,
         loading: true,
@@ -33,6 +35,7 @@ describe('request reducer', () => {
         readMeFetched: false,
         repoFetched: false,
         repositories: [],
-        repository: {} });
+        repository: {},
+        owner: {} });
   });
 });
