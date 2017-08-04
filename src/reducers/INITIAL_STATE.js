@@ -4,8 +4,8 @@ const initialState = {
   error: null,
   repoFetched: false,
   readMeFetched: false,
-  readMe: '',
-  repository: {},
+  readMe: null,
+  repository: [],
 };
 
 export default initialState;

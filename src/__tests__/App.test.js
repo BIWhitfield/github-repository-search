@@ -1,14 +1,10 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import ReactDOM from 'react-dom';
 import App from '../App';
 
-describe('<App />', () => {
-	it('it renders 1 <App /> component', () => {
-		const component = shallow(<App />);
-		expect(component).toHaveLength(1);
-	})
-	it('renders props correctly', () => {
-		const component = shallow(<App name="app" />);
-		expect(component.instance().props.name).toBe('app');
-	})
-})
+jest.mock('react-router');
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+});

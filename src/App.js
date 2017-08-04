@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import NavBar from './components/NavBar';
-import SearchBar from './components/SearchBar';
+import SearchForm from './components/SearchForm';
 import Repository from './components/Repository';
 import './css/App.css';
 
@@ -18,7 +18,7 @@ const App = () => (
         </div>
         <div className="column" />
       </div>
-			<Route exact path="/" component={SearchBar} />
+      <Route exact path="/" component={SearchForm} />
       <Route path="/repos/:owner/:repo" component={Repository} />
     </div>
   </Router>
