@@ -70,8 +70,8 @@ Repository.propTypes = {
   fetchReadMe: PropTypes.func.isRequired,
   readMe: PropTypes.string.isRequired,
   fetchRepo: PropTypes.func.isRequired,
-	repo: PropTypes.object.isRequired,
-	match: PropTypes.object.isRequired,
+  repo: PropTypes.object.isRequired,
+  match: PropTypes.object.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Repository);
