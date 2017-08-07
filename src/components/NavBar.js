@@ -7,7 +7,7 @@ const NavBar = () => (
     <section className="navbar">
       <NavLink to="/" className="gitLogo">
         <img
-          src="http://www.iconsdb.com/icons/preview/white/github-10-xxl.png"
+          src="http://www.mirkokroese.nl/assets/img/social/github.png"
           alt="Github Logo"
           width="50"
           height="50"
